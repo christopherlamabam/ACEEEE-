@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TyperX – Game</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="ZORO.js" defer></script>
+</head>
+<body> <div class="bg-grid"></div>
+  <div class="bg-glow"></div>
+  <div class="toast" id="toast"></div>
+
+  <div class="page active" id="page-game">
+    <div class="game-header">
+      <div>
+        <div class="player-tag">Player</div>
+        <div class="player-name-display" id="display-name">—</div>
+      </div>
+      <div style="text-align:right">
+        <div class="player-tag">Difficulty</div>
+        <div class="player-name-display" id="display-diff" style="color:var(--accent2)">—</div>
+      </div>
+    </div>
+
+    <div class="stats-bar">
+      <div class="stat-box">
+        <div class="stat-label">WPM</div>
+        <div class="stat-value" id="stat-wpm">0</div>
+        <div class="stat-unit">words/min</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">Accuracy</div>
+        <div class="stat-value" id="stat-acc">100<span class="stat-unit">%</span></div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">Timer</div>
+        <div class="stat-value" id="stat-time">60<span class="stat-unit">s</span></div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">Progress</div>
+        <div class="stat-value" id="stat-prog">0<span class="stat-unit">%</span></div>
+      </div>
+    </div>
+
+    <div class="progress-wrap">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <div class="text-display-box" id="text-display"></div>
+
+    <input class="typing-input" id="typing-input"
+           placeholder="Click here and start typing..."
+           autocomplete="off" autocorrect="off"
+           autocapitalize="off" spellcheck="false"/>
+
+    <div class="game-btns">
+      <button class="btn btn-outline" onclick="resetGame()">↺ RESTART</button>
+      <button class="btn btn-outline" onclick="window.location.href='scoreboard.html'">SCOREBOARD</button>
+      <button class="btn btn-outline" style="border-color:var(--accent2);color:var(--accent2)"
+              onclick="window.location.href='Aindex.html'">LOGOUT</button>
+    </div>
+
+    <div class="result-card" id="result-card">
+      <div class="result-title">ROUND COMPLETE</div>
+      <div class="result-wpm" id="res-wpm">0</div>
+      <div style="color:var(--muted);font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;">WPM</div>
+      <div class="result-stats">
+        <div class="result-stat">
+          <div class="val" id="res-acc">0%</div>
+          <div class="lbl">Accuracy</div>
+        </div>
+        <div class="result-stat">
+          <div class="val" id="res-chars">0</div>
+          <div class="lbl">Chars Typed</div>
+        </div>
+        <div class="result-stat">
+          <div class="val" id="res-errors">0</div>
+          <div class="lbl">Errors</div>
+        </div>
+      </div>
+      <div class="result-btns">
+        <button class="btn" onclick="resetGame()">↺ PLAY AGAIN</button>
+        <button class="btn btn-outline" onclick="window.location.href='scoreboard.html'">SCOREBOARD</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
